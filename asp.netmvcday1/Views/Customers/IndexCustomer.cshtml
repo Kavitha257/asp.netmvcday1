@@ -1,0 +1,31 @@
+﻿@model List<asp.netmvcday1.Models.Customer>
+@{
+    ViewBag.Title = "IndexCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customer Details</h2>
+<h3>New Customer</h3>
+<text>@Html.ActionLink("New Customer", "Create", "Customers")</text>
+<table class="table table-bordered table-hover " >
+    <tr style="background-color:dodgerblue">
+        <th>Customer ID</th>
+        <th>Name</th>
+        <th>Membership type</th>
+        <th></th>
+        <th></th>
+
+    </tr>
+    @foreach(var item in Model)
+    {
+    <tr>
+        <td>@item.Id</td>
+        <td>@Html.ActionLink(item.Name, "Details", "Customers", new { id = item.Id }, null)</td>
+        <td> @item.MembershipType.Type</td>
+        <td>@Html.ActionLink("Edit", "Edit", "Customers", new { id = item.Id }, new { @class = "btn btn-primary" })</td>
+        <td>@Html.ActionLink("Delete", "Delete", "Customers", new { id = item.Id }, new { @class = "btn btn-primary" })</td>
+
+    </tr>
+    }
+</table>
+

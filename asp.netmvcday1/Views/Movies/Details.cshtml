@@ -1,0 +1,25 @@
+﻿@model asp.netmvcday1.Models.Movie
+@{
+    ViewBag.Title = "MovieDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MovieDetails</h2>
+
+
+@if (Model != null)
+{
+    <ul>
+        <li>Genre:@Model.Genres.Name</li>
+        <li>Available Stock:@Model.AvailableStock</li>
+      
+        <li>Release Date:@Model.ReleaseDate.Value.ToShortDateString()</li>
+        <li>Date added:@Model.DateAdded.Value.ToShortDateString()</li>
+    </ul>
+    <text>@Html.ActionLink("Back to List", "About", "Movies")</text>
+}
+else
+{
+    <text>No record found</text>
+}
+

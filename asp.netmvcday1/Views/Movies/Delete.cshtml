@@ -1,0 +1,43 @@
+﻿@model asp.netmvcday1.Models.Movie
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+            @Html.LabelFor(c => c.Name)
+            @Html.DisplayFor(c => c.Name)
+           
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(c => c.ReleaseDate)
+            @Html.DisplayFor(c => c.ReleaseDate)
+         
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(c => c.DateAdded)
+            @Html.DisplayFor(c => c.DateAdded)
+      
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(c => c.AvailableStock)
+            @Html.DisplayFor(c => c.AvailableStock)
+
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(c => c.Genres)
+            @*@Html.DropDownList("GenreId", null, new { @class = "form-control", autocomplete = "off" })*@
+            @Html.DisplayFor(c => c.GenreId)
+       
+
+        </div>
+        <div>
+            <input type="submit" name="cmdsubmit" value="Submit" />
+        </div>
+    }
+</div>

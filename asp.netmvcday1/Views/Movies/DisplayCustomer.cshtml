@@ -1,0 +1,19 @@
+﻿@model asp.netmvcday1.ViewModel.CustomerMovieViewModel
+@{
+    ViewBag.Title = "DisplayCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron" style="border:5px dashed red;margin:initial">
+    <h2 class="align-content-center" style="background-color:blueviolet">Display Movie and CustomerNames</h2>
+    <p >Customer Name:@Model.Customers.Name</p>
+
+    <ul class="align-content-center" style="background-color:cornflowerblue">
+
+        @foreach (var item in Model.Movies)
+        {
+            <li>Movie name:@item.Name</li>
+
+        }
+
+    </ul>
+</div>

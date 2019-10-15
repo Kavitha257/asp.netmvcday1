@@ -1,0 +1,49 @@
+﻿@model asp.netmvcday1.Models.Customer
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        //HtmlHelper.UnobtrusiveJavaScriptEnabled=false;
+        var BirthDate = Model.BirthDate.HasValue ? Model.BirthDate.Value.ToLongDateString() : "No Date";
+        <div class="form-group">
+            @Html.LabelFor(c => c.Name)
+            @Html.DisplayFor(c => c.Name)
+           
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(c => c.City)
+            @Html.DisplayFor(c => c.City)
+         
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(c => c.BirthDate)
+            @*@Html.DisplayFor("BirthDate", BirthDate, new { @class = "form-control", autocomplete = "off" })*@
+            @Html.DisplayFor(c => c.BirthDate)
+                @Html.ValidationMessageFor(c => c.BirthDate)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(c => c.Gender)
+            @*@Html.DropDownListFor(c => c.Gender, null, new { @class = "form-control", autocomplete = "off" })*@
+            @Html.DisplayFor(c => c.Gender)
+         
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(c => c.MembershipTypeId)
+            @*@Html.DropDownList("mem", null, new { @class = "form-control", autocomplete = "off" })*@
+            @Html.DisplayFor(c => c.MembershipTypeId)
+          
+        </div>
+        <div>
+            <input type="submit" name="cmdsubmit" value="Submit" />
+        </div>
+    }
+</div>
+
+
+
+

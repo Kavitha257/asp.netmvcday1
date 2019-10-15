@@ -1,0 +1,27 @@
+﻿@model asp.netmvcday1.Models.Customer
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+@if (Model != null)
+{
+    <ul>
+ <li>BirthDate:@Model.BirthDate.Value.ToShortDateString()</li>
+        <li>Gender:@Model.Gender</li>
+        <li>City:@Model.City</li>
+        <li>Duration:@Model.MembershipType.Duration</li>
+        <li>SignUPFee:@Model.MembershipType.SignUpFee</li>
+        <li>Discount:@Model.MembershipType.Discount</li>
+    </ul>
+
+    <text>@Html.ActionLink("Back to List","Index","Customers")</text>
+    
+}
+else
+{
+    <text>No record found</text>
+}
+
+

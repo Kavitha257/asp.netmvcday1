@@ -1,0 +1,30 @@
+﻿@model List<asp.netmvcday1.Models.Movie>
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movie details</h2>
+<h3>New movie</h3>
+<text>@Html.ActionLink("New movie", "Create", "Movies")</text>
+<table class="table table-bordered table-hover ">
+    <tr style="background-color:dodgerblue">
+        <th>Movie Id</th>
+        <th>Movie Name</th>
+        <th>
+
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Id</td>
+        <td>@Html.ActionLink(item.Name, "Details", "movies", new { id = item.Id }, null)</td>
+        <td>@Html.ActionLink("Edit", "Edit", "movies", new { id = item.Id }, new { @class = "btn btn-primary" })</td>
+        <td>@Html.ActionLink("Delete", "Delete", "movies", new { id = item.Id }, new { @class = "btn btn-primary" })</td>
+
+    </tr>
+    }
+</table>
+
